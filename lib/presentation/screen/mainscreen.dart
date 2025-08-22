@@ -38,7 +38,7 @@ class _MainScreenState extends State<MainScreen> {
             _currentIndex = 2; // center "Add" screen
           });
         },
-        child: const Icon(Icons.add, color: Colors.teal, size: 28),
+        child: const Icon(Icons.add, color: Colors.orange, size: 28),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
