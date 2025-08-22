@@ -1,0 +1,156 @@
+import 'package:flutter/material.dart';
+import 'package:foodapp/presentation/screen/Signup.dart';
+import 'package:foodapp/presentation/screen/homepage.dart';
+import 'package:foodapp/presentation/screen/mainscreen.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Stack(
+          children: [
+            // Background Image
+            Positioned.fill(
+              child: Image.asset(
+                "assets/foodmood-01.png",
+                fit: BoxFit.cover, // fills screen
+              ),
+            ),
+
+            // Content on top of background
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Back button only
+                    CircleAvatar(
+                      backgroundColor: Colors.orange,
+                      child: IconButton(
+                        icon: const Icon(Icons.arrow_back, color: Colors.white),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
+
+                    const SizedBox(height: 100),
+
+                    // Title
+                    const Text(
+                      "Login",
+                      style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    // Full Name field
+                    SizedBox(
+                      height: 60,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "Email",
+                          filled: true,
+                          fillColor: Colors.black.withOpacity(0.05),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide.none,
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                              vertical: 20, horizontal: 15),
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(height: 15),
+
+                    // Email field
+                    SizedBox(
+                      height: 60,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "Password",
+                          filled: true,
+                          fillColor: Colors.black.withOpacity(0.05),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide.none,
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                              vertical: 20, horizontal: 15),
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(height: 15),
+
+                    // Dont have an account? Login
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text("Don't have an account?"),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignupScreen()),
+                            );
+                          },
+                          child: const Text(
+                            "Signup",
+                            style: TextStyle(
+                                color: Colors.orange,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(height: 80),
+
+                    // Register button
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange,
+                          padding:
+                              const EdgeInsets.symmetric(vertical: 18),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MainScreen()),
+                        );
+                      },
+                        child: const Text(
+                          "Login",
+                          style:
+                              TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
