@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
           elevation: 0,
           title: RichText(
       text: TextSpan(
-    children: [
+      children: [
       TextSpan(
         text: "Food",
         style: TextStyle(
@@ -35,20 +35,9 @@ class HomeScreen extends StatelessWidget {
           fontSize: 20,
         ),
       ),
-    ],
-  ),
-),
-
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.search, color: Colors.black),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: const Icon(Icons.notifications, color: Colors.black),
-              onPressed: () {},
-            ),
-          ],
+      ],
+      ),
+      ),
         ),
         body: CustomScrollView(
           slivers: [
