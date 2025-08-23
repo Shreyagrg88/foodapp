@@ -128,7 +128,7 @@ class HomeScreen extends StatelessWidget {
       margin: const EdgeInsets.only(right: 8),
       child: Chip(
         label: Text(label),
-        backgroundColor: Colors.deepPurple.shade50,
+        backgroundColor: Colors.orange.shade50,
         labelStyle: const TextStyle(color: Colors.black),
       ),
     );
